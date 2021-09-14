@@ -1,0 +1,24 @@
+.segoe-base {
+  font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+  color: #ffffff;
+}
+
+.rgl-20 {
+  @extend .segoe-base;
+  font-size: 20px;
+}
+
+.rgl-19 {
+  @extend .segoe-base;
+  font-size: 19px;
+}
+
+.rgl-15 {
+  @extend .segoe-base;
+  font-size: 15px;
+}
+
+.rgl-14 {
+  @extend .segoe-base;
+  font-size: 14px;
+}
