@@ -405,44 +405,60 @@ export const Search = () => (
 
 const icons = [
   {
+    id: 1,
     title: "Home",
     element: <Home />,
-    id: 1,
+    path: "/",
+    main: () => "",
   },
   {
+    id: 2,
     title: "Explore",
     element: <Explore />,
-    id: 2,
+    path: "/explore",
+    main: () => "",
   },
   {
+    id: 3,
     title: "Notifications",
     element: <Notifications />,
-    id: 3,
+    path: "/notifications",
+    main: () => "",
   },
   {
+    id: 4,
     title: "Messages",
     element: <Messages />,
-    id: 4,
+    path: "/messages",
+    main: () => "",
   },
   {
+    id: 5,
     title: "Bookmarks",
     element: <Bookmarks />,
-    id: 5,
+    path: "/bookmarks",
+    main: () => "",
   },
   {
+    id: 6,
     title: "Lists",
     element: <Lists />,
-    id: 6,
+    path: "/lists",
+    main: () => "",
   },
   {
+    id: 7,
     title: "Profile",
     element: <Profile />,
-    id: 7,
+    path: "/profile",
+    main: () => "",
   },
   {
+    id: 8,
     title: "More",
     element: <More />,
-    id: 8,
+    path: "/more",
+    main: () => "",
   },
 ];
 

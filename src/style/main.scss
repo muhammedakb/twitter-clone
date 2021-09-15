@@ -18,10 +18,10 @@
   body {
     background-color: $dark1;
     min-height: 100vh;
-    padding: 0px 97px 0px 88px;
+    padding: 0px 97px 0px 78px;
     div[class="App"] {
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
     }
   }
 }
