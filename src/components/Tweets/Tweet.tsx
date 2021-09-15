@@ -12,7 +12,9 @@ const Tweet: React.FC = () => {
       <section className="r-r">
         <header className="rgl-15">
           <h3>Devon Lane</h3>
-          <p>@marcelosalomao</p> - <p>23s</p>
+          <p className="username">@marcelosalomao</p>
+          <span> - </span>
+          <p className="time">23s</p>
         </header>
         <main className="rgl-15">Is this big enough for you?</main>
         <div className="image">
