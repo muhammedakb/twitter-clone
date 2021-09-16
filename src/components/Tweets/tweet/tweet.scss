@@ -1,0 +1,107 @@
+@import "../../../style/__colors";
+
+#result {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 15px;
+  &:not(:last-child) {
+    border-bottom: 1px solid $dark4;
+  }
+  &:hover {
+    background-color: $dark2;
+    opacity: 0.9;
+    cursor: pointer;
+  }
+  .r-l {
+    img {
+      width: 49px;
+      height: 49px;
+      border-radius: 50%;
+    }
+  }
+  .r-r {
+    header {
+      display: flex;
+      align-items: center;
+      h3 {
+        font-weight: 700;
+        font-size: 15px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .username {
+        margin-left: 4px;
+        color: $dark6;
+      }
+      span,
+      .time {
+        position: relative;
+        color: $dark6;
+        margin-left: 4px;
+        &:not(.time) {
+          width: 2px;
+          height: 2px;
+          background-color: $dark6;
+          border-radius: 50%;
+        }
+        &:not(span):hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    main {
+      margin-top: 5px;
+    }
+    .image {
+      margin-top: 10px;
+    }
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      div {
+        display: flex;
+        align-items: center;
+        &:not(.answer) {
+          margin-right: 20px;
+        }
+        .numbers {
+          margin-left: 10px;
+          color: $dark6;
+        }
+        &.answer:hover {
+          svg,
+          .numbers {
+            stroke: $primary-blue;
+            color: $primary-blue;
+          }
+        }
+        &.retweet:hover {
+          svg,
+          .numbers {
+            stroke: $retweet;
+            color: $retweet;
+          }
+        }
+        &.like:hover {
+          svg,
+          path,
+          .numbers {
+            fill: $like-red;
+            stroke: $like-red;
+            color: $like-red;
+          }
+        }
+        &.share:hover {
+          svg {
+            stroke: $primary-blue;
+            color: $primary-blue;
+          }
+        }
+      }
+    }
+  }
+}

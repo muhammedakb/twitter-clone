@@ -8,7 +8,8 @@ import {
 } from "../../icons/icons";
 import "./tweets.scss";
 import pp from "../../images/pp.jpg";
-import Tweet from "./Tweet";
+import Tweet from "./tweet/Tweet";
+import TextareaAutosize from "react-textarea-autosize";
 
 const Tweets: React.FC = () => {
   return (
@@ -23,7 +24,7 @@ const Tweets: React.FC = () => {
             <img src={pp} alt="" />
           </div>
           <div className="str">
-            <textarea
+            <TextareaAutosize
               name="tweet"
               id="sendTweet"
               className="rgl-20"
@@ -46,6 +47,12 @@ const Tweets: React.FC = () => {
         </div>
       </header>
       {/* component or inline ? */}
+      <Tweet />
+      <Tweet />
+      <Tweet />
+      <Tweet />
+      <Tweet />
+      <Tweet />
       <Tweet />
     </main>
   );

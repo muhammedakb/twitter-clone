@@ -10,6 +10,7 @@
   min-height: 100vh;
   width: 599px;
   border-right: 1px solid $dark4;
+  margin-left: 263px;
   #home {
     .h-top {
       @include flex-betwen;
@@ -42,6 +43,7 @@
           background-color: $dark1;
           line-height: 24px;
           resize: none;
+          overflow: auto;
           &::placeholder {
             color: $dark6;
           }
