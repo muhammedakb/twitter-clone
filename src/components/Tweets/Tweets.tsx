@@ -16,7 +16,7 @@ const Tweets: React.FC = () => {
   const [tweet, setTweet] = useState<string[]>([]);
   const [active, setActive] = useState<boolean>(false);
 
-  const handleChange = async (e?: any) => {
+  const handleChange = async (e: any) => {
     const len = e.target.value.length;
     // console.log(len);
 
