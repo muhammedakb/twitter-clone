@@ -1,7 +1,7 @@
 import covid19 from "../../../images/covid19.jpg";
 import trump from "../../../images/trump.jpg";
 import sport from "../../../images/sport.jpg";
-import React from "react";
+import "./agenda.scss";
 
 const trends = [
   {
@@ -38,28 +38,28 @@ function Agenda() {
       </header>
       <article>
         {trends.map((trend, index) => (
-          <React.Fragment key={index}>
+          <div id="trends" key={index}>
             <div className="tls">
               <div className="tlst">
-                <span>{trend.title}</span>
-                <span></span>
-                <span>{trend.time}</span>
+                <span className="rgl-14">{trend.title}</span>
+                <span className="dot"></span>
+                <span className="rgl-14">{trend.time}</span>
               </div>
               <div className="tlsm">
-                <p>{trend.content}</p>
+                <p className="rgl-15">{trend.content}</p>
               </div>
-              <div className="tlsb">
+              <div className="tlsb rgl-14">
                 Trending with <span>{`#${trend.trending}`}</span>
               </div>
             </div>
             <div className="trs">
-              <img src={trend.image} alt="" />
+              <img src={trend.image} alt={trend.title} />
             </div>
-          </React.Fragment>
+          </div>
         ))}
       </article>
       <footer>
-        <p>Show more</p>
+        <p className="rgl-15">Show more</p>
       </footer>
     </section>
   );

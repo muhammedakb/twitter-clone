@@ -17,6 +17,12 @@ function Feed() {
 
       <Agenda />
       <Follow />
+      <footer id="copy">
+        <p>
+          Terms of Service Privacy Policy Cookie Policy <br></br> Ads info More
+          &copy; 2021 Twitter, Inc.
+        </p>
+      </footer>
     </main>
   );
 }

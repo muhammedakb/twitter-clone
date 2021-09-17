@@ -1,5 +1,6 @@
 import React from "react";
 import pp from "../../../images/pp.jpg";
+import "./follow.scss";
 
 const whoToFollow = [
   {
@@ -22,7 +23,7 @@ function Follow() {
       </header>
       <article>
         {whoToFollow.map((follow, index) => (
-          <React.Fragment key={index}>
+          <div id="follow-result" key={index}>
             <div className="f-left">
               <img src={follow.image} alt="pp" />
             </div>
@@ -33,7 +34,7 @@ function Follow() {
             <div className="f-right">
               <button>Follow</button>
             </div>
-          </React.Fragment>
+          </div>
         ))}
       </article>
       <footer>
