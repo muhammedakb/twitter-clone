@@ -2,8 +2,14 @@ import pp from "../../../images/pp.jpg";
 import tw from "../../../images/tw.jpg";
 import { Answer, ReTweet, Like, Share } from "../../../icons/icons";
 import "./tweet.scss";
+import { ITweet } from "../Tweets";
 
-const Tweet: React.FC = () => {
+interface ITweetProps {
+  tweet: ITweet;
+}
+const Tweet: React.FC<ITweetProps> = (props) => {
+  const { tweet } = props;
+
   return (
     <main id="result">
       <section className="r-l">
@@ -11,27 +17,32 @@ const Tweet: React.FC = () => {
       </section>
       <section className="r-r">
         <header className="rgl-15">
-          <h3>Devon Lane</h3>
-          <p className="username">@marcelosalomao</p>
+          <h3>{tweet.name}</h3>
+          <p className="username">@{tweet.username}</p>
           <span></span>
-          <p className="time">23s</p>
+          <p className="time">{tweet.time}</p>
         </header>
-        <main className="rgl-15">Is this big enough for you?</main>
-        <div className="image">
-          <img src={tw} alt="" />
-        </div>
+        <main className="rgl-15">{tweet.content}</main>
+        {tweet.image ? (
+          <div className="image">
+            <img src={tw} alt="" />
+          </div>
+        ) : (
+          <></>
+        )}
+
         <footer>
           <div className="answer">
             <Answer />
-            <span className="numbers rgl-13">497</span>
+            <span className="numbers rgl-13">{tweet.answer}</span>
           </div>
           <div className="retweet">
             <ReTweet />
-            <span className="numbers rgl-13">12,3 K</span>
+            <span className="numbers rgl-13">{tweet.retweet}</span>
           </div>
           <div className="like">
             <Like />
-            <span className="numbers rgl-13">62,3 K</span>
+            <span className="numbers rgl-13">{tweet.like}</span>
           </div>
           <div className="share">
             <Share />

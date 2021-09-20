@@ -2,12 +2,13 @@
 
 #result {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  // align-items: flex-start;
+  // justify-content: space-between;
   padding: 10px 15px;
-  &:not(:last-child) {
-    border-bottom: 1px solid $dark4;
-  }
+  border-bottom: 1px solid $dark4;
+  // &:not(:last-child) {
+  //   border-bottom: 1px solid $dark4;
+  // }
   &:hover {
     background-color: $dark2;
     opacity: 0.9;
@@ -21,6 +22,8 @@
     }
   }
   .r-r {
+    flex: 1;
+    margin-left: 10px;
     header {
       display: flex;
       align-items: center;
@@ -61,7 +64,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 10px;
+      margin-top: 15px;
       div {
         display: flex;
         align-items: center;

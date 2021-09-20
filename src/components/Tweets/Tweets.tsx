@@ -12,16 +12,50 @@ import Tweet from "./tweet/Tweet";
 import TextareaAutosize from "react-textarea-autosize";
 import { useState } from "react";
 
+export interface ITweet {
+  name: string;
+  username: string;
+  time: string | number;
+  content: string | undefined;
+  image?: HTMLImageElement | String | File;
+  answer?: number;
+  retweet?: number;
+  like?: number;
+}
+
 const Tweets: React.FC = () => {
-  const [tweet, setTweet] = useState<string[]>([]);
+  const [result, setResult] = useState<string>();
+  const [tweet, setTweet] = useState<ITweet>({
+    name: "",
+    username: "",
+    time: "",
+    content: "",
+    image: "",
+    answer: 0,
+    retweet: 0,
+    like: 0,
+  });
   const [active, setActive] = useState<boolean>(false);
 
   const handleChange = async (e: any) => {
     const len = e.target.value.length;
-    // console.log(len);
-
-    await setTweet(e.target.value);
+    const val = e.target.value;
+    setTweet({ ...tweet });
+    await setResult(val);
     await (len > 0 ? setActive(true) : setActive(false));
+  };
+
+  const sendTweet = async () => {
+    await setTweet({
+      name: "Muhammed Akbulut",
+      username: "muhammedakb",
+      time: "23s",
+      content: result,
+      image: "",
+      answer: 0,
+      retweet: 0,
+      like: 0,
+    });
   };
 
   return (
@@ -42,7 +76,7 @@ const Tweets: React.FC = () => {
               className="rgl-20"
               placeholder="What's happening?"
               maxLength={250}
-              onChange={handleChange}
+              onKeyUp={handleChange}
             />
             <div className="strb">
               <div className="strbl">
@@ -53,7 +87,10 @@ const Tweets: React.FC = () => {
                 <Plan />
               </div>
               <div className="strbr">
-                <button className={`rgl-15 ${active ? "active" : ""}`}>
+                <button
+                  className={`rgl-15 ${active ? "active" : ""}`}
+                  onClick={sendTweet}
+                >
                   Tweet
                 </button>
               </div>
@@ -61,13 +98,7 @@ const Tweets: React.FC = () => {
           </div>
         </div>
       </header>
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
+      {tweet.content ? <Tweet tweet={tweet} /> : null}
     </main>
   );
 };
