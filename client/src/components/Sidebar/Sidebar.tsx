@@ -7,7 +7,11 @@ const Sidebar: React.FC = () => {
   return (
     <header id="sidebar">
       <main>
-        <Logo />
+        <Router>
+          <Link to="/">
+            <Logo />
+          </Link>
+        </Router>
         <section className="nav-items">
           <ul>
             {icons.map((icon) => (

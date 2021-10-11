@@ -11,6 +11,8 @@ import pp from "../../images/pp.jpg";
 import Tweet from "./tweet/Tweet";
 import TextareaAutosize from "react-textarea-autosize";
 import { useState } from "react";
+import ReactTooltip from "react-tooltip";
+import { BiWorld } from "react-icons/bi";
 
 export interface ITweet {
   name: string;
@@ -25,6 +27,7 @@ export interface ITweet {
 
 const Tweets: React.FC = () => {
   const [result, setResult] = useState<string>();
+  const [none, setNone] = useState<boolean>(true);
   const [tweet, setTweet] = useState<ITweet>({
     name: "",
     username: "",
@@ -77,14 +80,36 @@ const Tweets: React.FC = () => {
               placeholder="What's happening?"
               maxLength={250}
               onKeyUp={handleChange}
+              onFocus={() => setNone(false)}
             />
+            {/* TODO : className = "none" */}
+            <p className={`who-answer rgl-13 ${none ? "none" : ""}`}>
+              <BiWorld /> <span>Anyone can answer</span>
+            </p>
             <div className="strb">
               <div className="strbl">
-                <Image />
-                <Gif />
-                <Survey />
-                <Emoji />
-                <Plan />
+                <div data-tip="Media">
+                  <Image />
+                </div>
+                <div data-tip="GIF">
+                  <Gif />
+                </div>
+                <div data-tip="Survey">
+                  <Survey />
+                </div>
+                <div data-tip="Emoji">
+                  <Emoji />
+                </div>
+                <div data-tip="Plan">
+                  <Plan />
+                </div>
+
+                <ReactTooltip
+                  place="bottom"
+                  type="info"
+                  textColor="#fff"
+                  effect="float"
+                />
               </div>
               <div className="strbr">
                 <button

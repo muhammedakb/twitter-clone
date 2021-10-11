@@ -17,6 +17,9 @@
       @include flex-betwen;
       border-bottom: 1px solid $dark4;
       padding: 15px 15px 14px 15px;
+      h2 {
+        cursor: pointer;
+      }
     }
     .send-tweet {
       display: flex;
@@ -50,9 +53,29 @@
             color: $dark6;
           }
         }
+        .who-answer {
+          display: flex;
+          align-items: center;
+          color: $primary-blue;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid $dark4;
+          margin-left: 5px;
+          cursor: pointer;
+          &.none {
+            display: none;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+          span {
+            margin-left: 5px;
+          }
+        }
         .strb {
           @include flex-betwen;
           .strbl {
+            display: flex;
             :not(:first-child) {
               margin-left: 15px;
             }
