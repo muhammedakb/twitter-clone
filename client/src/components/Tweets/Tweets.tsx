@@ -82,7 +82,6 @@ const Tweets: React.FC = () => {
               onKeyUp={handleChange}
               onFocus={() => setNone(false)}
             />
-            {/* TODO : className = "none" */}
             <p className={`who-answer rgl-13 ${none ? "none" : ""}`}>
               <BiWorld /> <span>Anyone can answer</span>
             </p>
