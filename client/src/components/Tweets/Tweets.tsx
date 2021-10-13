@@ -81,10 +81,13 @@ const Tweets: React.FC = () => {
               maxLength={250}
               onKeyUp={handleChange}
               onFocus={() => setNone(false)}
+              onBlur={() => setNone(true)}
             />
-            <p className={`who-answer rgl-13 ${none ? "none" : ""}`}>
-              <BiWorld /> <span>Anyone can answer</span>
-            </p>
+            {!none && (
+              <p className="who-answer rgl-13">
+                <BiWorld /> <span>Anyone can answer</span>
+              </p>
+            )}
             <div className="strb">
               <div className="strbl">
                 <div data-tip="Media">
@@ -113,7 +116,7 @@ const Tweets: React.FC = () => {
               <div className="strbr">
                 <button
                   className={`rgl-15 ${active ? "active" : ""}`}
-                  onClick={sendTweet}
+                  onMouseDown={sendTweet}
                 >
                   Tweet
                 </button>
