@@ -93,6 +93,15 @@
             }
           }
           .strbr {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: flex-end;
+            svg {
+              width: 1.3rem;
+              height: 1.3rem;
+              margin-right: 1rem;
+            }
             button {
               width: 77px;
               height: 39px;

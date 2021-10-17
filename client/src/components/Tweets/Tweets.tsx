@@ -13,7 +13,7 @@ import TextareaAutosize from "react-textarea-autosize";
 import { useState } from "react";
 import ReactTooltip from "react-tooltip";
 import { BiWorld } from "react-icons/bi";
-
+import { Circle } from "rc-progress";
 export interface ITweet {
   name: string;
   username: string;
@@ -28,6 +28,8 @@ export interface ITweet {
 const Tweets: React.FC = () => {
   const [result, setResult] = useState<string>();
   const [none, setNone] = useState<boolean>(true);
+  const [active, setActive] = useState<boolean>(false);
+  const [twLen, setTwLen] = useState<number>(0);
   const [tweet, setTweet] = useState<ITweet>({
     name: "",
     username: "",
@@ -38,13 +40,13 @@ const Tweets: React.FC = () => {
     retweet: 0,
     like: 0,
   });
-  const [active, setActive] = useState<boolean>(false);
 
   const handleChange = async (e: any) => {
     const len = e.target.value.length;
     const val = e.target.value;
-    setTweet({ ...tweet });
+    // setTweet({ ...tweet });
     await setResult(val);
+    await setTwLen(len);
     await (len > 0 ? setActive(true) : setActive(false));
   };
 
@@ -114,6 +116,13 @@ const Tweets: React.FC = () => {
                 />
               </div>
               <div className="strbr">
+                {twLen > 0 && (
+                  <Circle
+                    percent={twLen / 2.5}
+                    strokeWidth={8}
+                    strokeColor="#1da1f2"
+                  />
+                )}
                 <button
                   className={`rgl-15 ${active ? "active" : ""}`}
                   onMouseDown={sendTweet}
