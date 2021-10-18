@@ -10,10 +10,11 @@ import "./tweets.scss";
 import pp from "../../images/pp.jpg";
 import Tweet from "./tweet/Tweet";
 import TextareaAutosize from "react-textarea-autosize";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ReactTooltip from "react-tooltip";
 import { BiWorld } from "react-icons/bi";
 import { Circle } from "rc-progress";
+import ThemeContext from "../../context/ThemeContext";
 export interface ITweet {
   name: string;
   username: string;
@@ -40,6 +41,7 @@ const Tweets: React.FC = () => {
     retweet: 0,
     like: 0,
   });
+  const [theme] = useContext(ThemeContext);
 
   const handleChange = async (e: any) => {
     const len = e.target.value.length;
@@ -87,32 +89,33 @@ const Tweets: React.FC = () => {
             />
             {!none && (
               <p className="who-answer rgl-13">
-                <BiWorld /> <span>Anyone can answer</span>
+                <BiWorld color={theme} />{" "}
+                <span style={{ color: theme }}>Anyone can answer</span>
               </p>
             )}
             <div className="strb">
-              <div className="strbl">
+              <div className="strbl" style={{ stroke: theme }}>
                 <div data-tip="Media">
-                  <Image />
+                  <Image color={theme} />
                 </div>
                 <div data-tip="GIF">
-                  <Gif />
+                  <Gif color={theme} />
                 </div>
                 <div data-tip="Survey">
-                  <Survey />
+                  <Survey color={theme} />
                 </div>
                 <div data-tip="Emoji">
-                  <Emoji />
+                  <Emoji color={theme} />
                 </div>
                 <div data-tip="Plan">
-                  <Plan />
+                  <Plan color={theme} />
                 </div>
 
                 <ReactTooltip
                   place="bottom"
-                  type="info"
+                  type="dark"
                   textColor="#fff"
-                  effect="float"
+                  effect="solid"
                 />
               </div>
               <div className="strbr">
@@ -120,12 +123,13 @@ const Tweets: React.FC = () => {
                   <Circle
                     percent={twLen / 2.5}
                     strokeWidth={8}
-                    strokeColor="#1da1f2"
+                    strokeColor={theme}
                   />
                 )}
                 <button
                   className={`rgl-15 ${active ? "active" : ""}`}
                   onMouseDown={sendTweet}
+                  style={{ backgroundColor: theme }}
                 >
                   Tweet
                 </button>

@@ -2,8 +2,11 @@ import { Link, BrowserRouter as Router } from "react-router-dom";
 import icons, { Logo, MoreProfile } from "../../icons/icons";
 import "./sidebar.scss";
 import pp from "../../images/pp.jpg";
-
+import { useContext } from "react";
+import ThemeContext from "../../context/ThemeContext";
 const Sidebar: React.FC = () => {
+  const [theme] = useContext(ThemeContext);
+
   return (
     <header id="sidebar">
       <main>
@@ -25,7 +28,9 @@ const Sidebar: React.FC = () => {
               </li>
             ))}
             <li className="btn-tweet">
-              <button className="rgl-15">Tweet</button>
+              <button className="rgl-15" style={{ backgroundColor: theme }}>
+                Tweet
+              </button>
             </li>
           </ul>
         </section>

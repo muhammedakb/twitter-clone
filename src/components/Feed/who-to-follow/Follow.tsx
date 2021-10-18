@@ -15,7 +15,7 @@ const whoToFollow = [
   },
 ];
 
-function Follow() {
+function Follow(props: any) {
   return (
     <section id="whotofollow">
       <header>
@@ -38,7 +38,7 @@ function Follow() {
         ))}
       </article>
       <footer>
-        <p>Show more</p>
+        <p style={{ color: props.theme }}>Show more</p>
       </footer>
     </section>
   );

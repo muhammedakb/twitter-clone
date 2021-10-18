@@ -30,7 +30,7 @@ const trends = [
   },
 ];
 
-function Agenda() {
+function Agenda(props: any) {
   return (
     <section id="agenda">
       <header>
@@ -59,7 +59,9 @@ function Agenda() {
         ))}
       </article>
       <footer>
-        <p className="rgl-15">Show more</p>
+        <p className="rgl-15" style={{ color: props.theme }}>
+          Show more
+        </p>
       </footer>
     </section>
   );
