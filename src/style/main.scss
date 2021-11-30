@@ -23,5 +23,10 @@
       display: flex;
       // justify-content: space-between;
     }
+    div[id="root"] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
